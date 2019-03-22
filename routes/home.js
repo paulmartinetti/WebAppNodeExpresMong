@@ -7,7 +7,7 @@ router.get('/',(req, res, next)=>{
     // the render method tells the app to use hjs, null = data obj for now
     res.render('home', null)
     /* res.json({
-        confirmation: 'this is from the router',
+        confirmation: 'this is from the home router',
         data: 'we are on home router'
     }) */
 })
