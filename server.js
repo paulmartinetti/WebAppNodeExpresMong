@@ -5,7 +5,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 // note - assigning db sample-store which does not exist; mongo will create it on first connect
 // Use when committing to github - 
-mongoose.connect('mongodb+sUUUUUUPPPPPPDDDDDBBBBBBore?retryWrites=true', { useNewUrlParser: true }, (err, data)=>{
+mongoose.connect('mongoUUUUUPPPPPPDDDDDDDre?retryWrites=true', { useNewUrlParser: true }, (err, data) => {
     if (err) {
         console.log('db fail')
         return
@@ -16,6 +16,7 @@ mongoose.connect('mongodb+sUUUUUUPPPPPPDDDDDBBBBBBore?retryWrites=true', { useNe
 // routes
 const home = require('./routes/home')
 const register = require('./routes/register')
+const login = require('./routes/login')
 
 const app = express()
 
@@ -26,15 +27,17 @@ app.set('view engine', 'hjs')
 
 // parse data entered into forms
 app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({ extended: false }))
 
 // project will automatically look here for public assets
 app.use(express.static(path.join(__dirname, 'public')))
 
+// *** paths ***
 // server will always *use* home router, all requests pass through
 app.use('/', home)
 // form is sending data the register path
-app.use('/register',register)
+app.use('/register', register)
+app.use('/login', login)
 
 app.listen(5000)
 console.log('app running on 5000')

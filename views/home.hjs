@@ -33,6 +33,12 @@
             <input type="password" name="password" placeholder="Password" /><br />
             <input type="submit" value="Sign Up" />
         </form>
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="email" placeholder="Email" /><br />
+            <input type="password" name="password" placeholder="Password" /><br />
+            <input type="submit" value="Login" />
+        </form>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
