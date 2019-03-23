@@ -1,7 +1,7 @@
 // handle all routing to the home page
 const express = require('express')
 const router = express.Router()
-//const User = require('../models/User')
+const User = require('../models/User')
 
 router.get('/',(req, res, next)=>{
     
@@ -12,11 +12,11 @@ router.get('/',(req, res, next)=>{
         data: 'we are on home router'
     }) */
 })
-/* router.get('/users', (req, res, next) => {
+router.get('/users', (req, res, next) => {
     const query = req.query
     User.find(query)
         .then(users => res.json({ users: users }))
         .catch(err => err.message)
-}) */
+})
 // not running the server from here, want to export this file into the server.js
 module.exports = router
