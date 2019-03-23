@@ -17,7 +17,7 @@ module.exports = (passport) => {
         })
     })
 
-    // set up strategy - local login (obj, fn)
+    // 1. set up strategy - local login (obj, fn)
     const localLogin = new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password',
@@ -42,4 +42,30 @@ module.exports = (passport) => {
         })
     })
     passport.use('localLogin', localLogin)
+
+    // 2. set up strategy - local login (obj, fn)
+    const localRegister = new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true
+    }, (req, email, password, next) => {
+        // check to see if user exists
+        User.findOne({ email: email }, (err, user) => {
+
+            // if user exists, not registering, send error user already exists
+            if (err) return next(err)
+
+            // if no user found by findOne()
+            if (user != null) return next(new Error('User already exists. Please login'))
+
+            // create new user (register) and callback (err, user) vv
+            User.create({email: email, password: password}, (err, user)=>{
+                if (err) return next(err)
+                // 
+                next(null, user)
+            })
+
+        })
+    })
+    passport.use('localRegister', localRegister)
 }
