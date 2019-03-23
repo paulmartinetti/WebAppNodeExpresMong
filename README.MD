@@ -26,6 +26,10 @@ Notes - each login flow is called a strategy, we're doing 'local strategy'
 // session library, saves session in a cookie
 npm i express-session --save
 
+// hash the password so it's secure, not text
+// provides hashing functions
+npm i bcryptjs --save
+
 // Win powershell create file
 https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6
 New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
