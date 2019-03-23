@@ -5,7 +5,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 // note - assigning db sample-store which does not exist; mongo will create it on first connect
 // Use when committing to github - 
-mongoose.connect('mongodUUUUUPPPPPPDDDDDDDue', { useNewUrlParser: true }, (err, data) => {
+mongoose.connect('mongoUUUUUPPPPPPDDDDDDDrites=true', { useNewUrlParser: true }, (err, data) => {
     if (err) {
         console.log('db fail')
         return
@@ -24,6 +24,7 @@ const home = require('./routes/home')
 const register = require('./routes/register')
 const login = require('./routes/login')
 const account = require('./routes/account')
+const admin = require('./routes/admin')
 
 // main app
 const app = express()
@@ -57,6 +58,7 @@ app.use('/', home)
 app.use('/register', register)
 app.use('/login', login)
 app.use('/account', account)
+app.use('/admin', admin)
 
 // vv error catch-all route - last route in this list ^^
 // access from login route using next(message)

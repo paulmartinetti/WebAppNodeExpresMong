@@ -30,6 +30,11 @@ npm i express-session --save
 // provides hashing functions
 npm i bcryptjs --save
 
+// add items into hjs, then into router, then into db, define Item model
+
+// create admin page to add / remove items
+start in views, copy home, then create a route to support the page
+
 // Win powershell create file
 https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6
 New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."

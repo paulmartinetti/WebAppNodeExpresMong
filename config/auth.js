@@ -59,11 +59,15 @@ module.exports = (passport) => {
             // if no user found by findOne()
             if (user != null) return next(new Error('User already exists. Please login'))
 
-            // create new user (register) and callback (err, user) vv
             // first hash the password, higher number harder to crack
             const hashedPw = bcrypt.hashSync(password, 10)
-            // now ready to create
-            User.create({email: email, password: hashedPw}, (err, user)=>{
+
+            // create condition where all users@zenva.com are admins
+            let isAdmin = false;
+            if (email.indexOf('@zenva.com') != -1) isAdmin = true
+            
+            // create new user (register) and callback (err, user) vv
+            User.create({ email: email, password: hashedPw, isAdmin:isAdmin }, (err, user) => {
                 if (err) return next(err)
                 // 
                 next(null, user)
