@@ -12,6 +12,7 @@ router.get('/',(req, res, next)=>{
         data: 'we are on home router'
     }) */
 })
+// I built to see users to see what I put for 
 router.get('/users', (req, res, next) => {
     const query = req.query
     User.find(query)
