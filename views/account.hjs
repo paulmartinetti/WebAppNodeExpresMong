@@ -40,7 +40,8 @@
                 <h3>Items for sale</h3>
                 <ol>
                     {{#itemsA}}
-                    <li><div class="item">{{name}}<br /><button>Add</button></div></li>
+                    <li><div class="item">{{name}}<br />
+                    <a class="btn btn-success" href="/account/additem/{{id}}">Add</a></div></li>
                     {{/itemsA}}
                 </ol>
             </div>

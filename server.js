@@ -4,8 +4,8 @@ const path = require('path')
 // mongoose
 const mongoose = require('mongoose')
 // note - assigning db sample-store which does not exist; mongo will create it on first connect
-// Use when committing to github - 
-mongoose.connect('moUUUUUPPPPPPDDDDDDDyWrites=true', { useNewUrlParser: true }, (err, data) => {
+// Use when committing to github - UUUUUPPPPPPDDDDDDD
+mongoose.connect('mongUUUUUPPPPPPDDDDDDDtore?retryWrites=true', { useNewUrlParser: true }, (err, data) => {
     if (err) {
         console.log('db fail')
         return

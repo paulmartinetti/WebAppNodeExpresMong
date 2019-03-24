@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+// **mongoose automatically creates a collection called items when it receives this model
 
 // model or schema
 const Item = new mongoose.Schema({
