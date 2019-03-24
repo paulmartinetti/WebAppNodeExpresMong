@@ -39,9 +39,9 @@
             <div class="col-8">
                 <h3>Items for sale</h3>
                 <ol>
-                    {{#items}}
+                    {{#itemsA}}
                     <li><div class="item">{{name}}<br /><button>Add</button></div></li>
-                    {{/items}}
+                    {{/itemsA}}
                 </ol>
             </div>
             <div class="col-4">

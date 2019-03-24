@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+// model or schema
 const Item = new mongoose.Schema({
     name: { type: String, default: '' },
     description: { type: String, default: '' },
