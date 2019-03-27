@@ -27,6 +27,7 @@
     </nav>
     <div class="container">
         <h1>We're at home.hjs -- sample store</h1>
+        <h2>Testing env var{{process.env.CONN_STR}}</h2>
         {{!-- sending to endpoint / route register --}}
         <form action="/register" method="POST">
             <input type="text" name="email" placeholder="Email" /><br />
