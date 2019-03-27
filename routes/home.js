@@ -4,9 +4,13 @@ const router = express.Router()
 const User = require('../models/User')
 
 router.get('/',(req, res, next)=>{
+
+    data = {
+        env: "fred"
+    }
     
     // the render method tells the app to use hjs, null = data obj for now
-    res.render('home', null)
+    res.render('home', data)
     /* res.json({
         confirmation: 'this is from the home router',
         data: 'we are on home router'
